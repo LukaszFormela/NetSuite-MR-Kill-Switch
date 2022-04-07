@@ -8,12 +8,9 @@
  * @NApiVersion 2.1
  * @NScriptType UserEventScript
  */
-define([
-  'N/runtime',
-  'LF_Helpers.js',
-], function (_runtime, _helpers) {
+define(["N/runtime", "LF_Helpers.js"], function (_runtime, _helpers) {
   const exports = {};
-  
+
   /**
    * Function definition to be triggered before record is submitted.
    *
@@ -23,11 +20,11 @@ define([
    */
   const beforeSubmit = (scriptContext) => {
     const currentScript = _runtime.getCurrentScript();
-    
+
     _helpers.setMrScriptKillswitch(currentScript.id);
-  }
-  
+  };
+
   exports.beforeSubmit = beforeSubmit;
-  
+
   return exports;
-}
+});
