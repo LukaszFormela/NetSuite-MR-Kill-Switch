@@ -5,10 +5,9 @@
  *
  * @author Lukasz Formela <hello@lukaszformela.com>
  * @website lukaszformela.com
- *
  * @NApiVersion 2.1
  */
-define(['N/cache'], function (_cache) {
+ define(['N/cache'], function (_cache) {
   /**
    * Sets Kill Switch on particular MR script
    *
