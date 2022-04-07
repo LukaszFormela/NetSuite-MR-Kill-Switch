@@ -8,7 +8,7 @@
  * @NApiVersion 2.1
  * @NScriptType MapReduceScript
  */
-define(['N/runtime', 'LF_Helpers.js'], function (_runtime, _helpers) {
+define(["N/runtime", "LF_Helpers.js"], function (_runtime, _helpers) {
   /**
    * Marks the beginning of the Map/Reduce process and generates input data.
    *
@@ -21,8 +21,8 @@ define(['N/runtime', 'LF_Helpers.js'], function (_runtime, _helpers) {
    */
   const getInputData = () => {
     return [];
-  }
-  
+  };
+
   /**
    * Executes when the map entry point is triggered and applies to each key/value pair.
    *
@@ -34,12 +34,12 @@ define(['N/runtime', 'LF_Helpers.js'], function (_runtime, _helpers) {
   const map = (mapContext) => {
     // If killswitch is activated, skip iteration
     const currentScript = _runtime.getCurrentScript();
-    
+
     if (_helpers.terminateMrScript(currentScript.id)) {
       return;
     }
-  }
-  
+  };
+
   /**
    * The reduce function is invoked one time for each of key/value pairs provided by map()
    *
@@ -51,13 +51,13 @@ define(['N/runtime', 'LF_Helpers.js'], function (_runtime, _helpers) {
   const reduce = (reduceContext) => {
     // If killswitch is activated, skip iteration
     const currentScript = _runtime.getCurrentScript();
-    
+
     if (_helpers.terminateMrScript(currentScript.id)) {
       return;
     }
-  }
-  
- /**
+  };
+
+  /**
    * Executes when the summarize entry point is triggered and applies to the result set.
    *
    * @param {Summary} summary - Holds statistics regarding the execution of a map/reduce script
@@ -67,4 +67,5 @@ define(['N/runtime', 'LF_Helpers.js'], function (_runtime, _helpers) {
    */
   const summarize = (summary) => {
     return;
-  }
+  };
+});
